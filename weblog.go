@@ -8,7 +8,10 @@ import (
 
 // Dummy username and password stored in variables
 var storedUsername = "admin"
+
 var storedPassword = "gina19901010"
+
+//var storedPassword = "gina190001021234"
 
 func main() {
 	router := gin.Default()

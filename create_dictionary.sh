@@ -5,7 +5,7 @@ read -p "Enter the name: " name
 
 # Convert name to lowercase and uppercase variations
 name_lower=$(echo "$name" | tr '[:upper:]' '[:lower:]')
-name_upper=$(echo "$name" | tr '[:lower:]' '[:upper:]')
+#name_upper=$(echo "$name" | tr '[:lower:]' '[:upper:]')
 
 # Common password additions
 common_additions=("123" "1234" "password" "!" "@" "2023" "2024")
@@ -33,17 +33,17 @@ for year in {1900..2024}; do
         
         for day in $(seq -w 1 "$days"); do
             # Create a date string in the format DDMMYYYY
-            birthdate="${day}${month}${year}"
+            birthdate="${year}${month}${day}"
             
             # Add combinations with the name
             echo "$name_lower$birthdate" >> "$dictionary_file"
-            echo "$name_upper$birthdate" >> "$dictionary_file"
+            #echo "$name_upper$birthdate" >> "$dictionary_file"
             
             # Add common additions
-            for addition in "${common_additions[@]}"; do
-                echo "$name_lower$birthdate$addition" >> "$dictionary_file"
-                echo "$name_upper$birthdate$addition" >> "$dictionary_file"
-            done
+            #for addition in "${common_additions[@]}"; do
+            #    echo "$name_lower$birthdate$addition" >> "$dictionary_file"
+            #    #echo "$name_upper$birthdate$addition" >> "$dictionary_file"
+            #done
         done
     done
 done
